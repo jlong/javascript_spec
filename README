@@ -1,0 +1,54 @@
+=JavaScript spec testing plugin
+
+Based heavily on the javascript_test plugin in the Rails Subversion repository,
+this plugin provides the JSSpec testing framework in a way that integrates
+with Rails applications.
+
+==Usage
+
+Use the provided generator to build a skeleton for your JavaScript spec.
+The built-in rake task can then be used to automatically run the specs
+in various installed browsers (supported are Firefox on IE/Mac/Linux, 
+Safari on Mac, Konqueror on Linux).
+
+Note that due to the built-in webrick, you don't have to change anything
+about your app, just add specs. :)
+
+==Example
+
+Generate a JavaScript spec skeleton for your public/javascripts/foo.js file:
+
+  script/generate javascript_spec foo
+
+Run the javascript spects and see the automagically controlled browsers in
+action:
+
+  rake spec:javascripts
+  
+You have to manually close the browser window(s) afterwards.
+
+You can also run the spec manually, by symlinking the assets directory.
+In your Rails application root, run:
+
+  ln -s ../../vendor/plugins/javascript_spec/assets/ spec/javascript/assets
+  
+You then can just open the individual .html spec files in your browser.
+
+All in all, JSSpec.js is closely modeled on RSpec. For more information about
+writing Javascript specs, see:
+
+http://jania.pe.kr/aw/moin.cgi/JSSpec
+
+
+==Credits
+
+The credit for this plugin really goes to Thomas Fuchs who authord the
+original javascript_test plugin. Also, Jon Tirsen authored the automated 
+browser remote control-niceties.
+
+
+== License
+
+Portions Copyright (c) 2007 John W. Long, released under the MIT license
+Portions Copyright (c) 2005-2006 Thomas Fuchs, released under the MIT license
+JSSpec is Copyright (c) 2007 Alan Kang and released under the GNU LGPL
